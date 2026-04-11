@@ -4,17 +4,18 @@ import { Badge } from "@/components/ui/badge"
 
 export default function Page() {
   return (
-    <div className="min-h-full py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-10">
-          <p className="text-sm uppercase tracking-[0.24em] text-muted-foreground mb-3">
+    <div className="min-h-full px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <p className="mb-3 text-sm tracking-[0.24em] text-muted-foreground uppercase">
             About me
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
             Who I am
           </h1>
-          <p className="mt-3 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            A quick introduction to my work, experience, and the projects that define my skillset.
+          <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg">
+            A quick introduction to my work, experience, and the projects that
+            define my skillset.
           </p>
         </div>
 
@@ -22,21 +23,27 @@ export default function Page() {
           <Card className="h-full shadow-lg">
             <CardContent className="space-y-6 text-sm leading-relaxed">
               <p>
-                I build modern web experiences with AI-enhanced workflows, responsive design, and clean user interactions.
+                I build modern web experiences with AI-enhanced workflows,
+                responsive design, and clean user interactions.
               </p>
               <div className="flex flex-col gap-4">
                 <div className="rounded-3xl border border-border bg-background p-6">
-                  <h2 className="text-lg font-semibold mb-3">What I do</h2>
+                  <h2 className="mb-3 text-lg font-semibold">What I do</h2>
                   <p className="text-muted-foreground">
-                    Creating polished interfaces, intelligent tools, and performance-conscious applications using the latest web technologies.
+                    Creating polished interfaces, intelligent tools, and
+                    performance-conscious applications using the latest web
+                    technologies.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  <Badge className="bg-slate-200 dark:bg-slate-800 text-[14px] py-3 px-4">
+                  <Badge className="bg-slate-200 px-4 py-3 text-[14px] dark:bg-slate-800">
                     Learning AI
                   </Badge>
-                  <Badge className="bg-slate-200 dark:bg-slate-800 text-[14px] py-3 px-4">
-                    Open
+                  <Badge className="bg-slate-200 px-4 py-3 text-[14px] dark:bg-slate-800">
+                    Being a better full-stack developer
+                  </Badge>
+                  <Badge className="bg-slate-200 px-4 py-3 text-[14px] dark:bg-slate-800">
+                    Open to opportunities
                   </Badge>
                 </div>
               </div>
@@ -44,7 +51,7 @@ export default function Page() {
           </Card>
 
           <Card className="h-full shadow-lg">
-            <CardContent className="flex h-full items-center justify-center bg-slate-100 dark:bg-slate-900 rounded-3xl">
+            <CardContent className="flex h-full items-center justify-center rounded-3xl bg-slate-100 dark:bg-slate-900">
               <p className="text-lg font-medium text-muted-foreground">Photo</p>
             </CardContent>
           </Card>
