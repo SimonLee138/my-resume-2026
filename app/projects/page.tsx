@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import * as React from "react"
 import { Badge } from "@/components/ui/badge"
@@ -9,7 +9,7 @@ import { IconBrandGithub } from "@tabler/icons-react"
 const projectCategories = ["All", "Web", "AI-powered", "Full-Stack"]
 
 const projects = [
-  {
+  /*{
     title: "Resume AI Assistant",
     description:
       "An AI-powered resume builder with interview-ready summaries, skill suggestions, and one-click export.",
@@ -63,7 +63,17 @@ const projects = [
     category: "Web",
     demo: "#",
     github: "#"
-  }
+  }*/
+  {
+    title: "Medication Scheduler",
+    description:
+      "An application to help users manage their medication schedules effectively.",
+    image: "/medication-scheduler.png",
+    tech: ["Next.js", "PostgreSQL", "TypeScript", "Tailwind CSS"],
+    category: "Web",
+    demo: "https://mug-and-pee-vercel.vercel.app/",
+    github: "https://github.com/SimonLee138/mug-and-pee",
+  },
 ]
 
 export default function Page() {
@@ -78,21 +88,22 @@ export default function Page() {
   )
 
   return (
-    <div className="min-h-full py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-10">
-          <p className="text-sm uppercase tracking-[0.24em] text-muted-foreground mb-3">
+    <div className="min-h-full px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <p className="mb-3 text-sm tracking-[0.24em] text-muted-foreground uppercase">
             Featured work
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+          <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
             Projects
           </h1>
-          <p className="mt-3 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            A selection of my best projects, from AI-enhanced experiences to fully featured web applications.
+          <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground sm:text-lg">
+            A selection of my best projects, from AI-enhanced experiences to
+            fully featured web applications.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="mb-8 flex flex-wrap justify-center gap-2">
           {projectCategories.map((option) => (
             <button
               key={option}
@@ -111,7 +122,10 @@ export default function Page() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (
-            <Card key={project.title} className="overflow-hidden shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+            <Card
+              key={project.title}
+              className="overflow-hidden shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+            >
               <div className="relative h-52 overflow-hidden bg-slate-100">
                 <img
                   src={project.image}
@@ -122,11 +136,17 @@ export default function Page() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <h2 className="text-xl font-semibold">{project.title}</h2>
-                  <p className="text-sm leading-6 text-muted-foreground">{project.description}</p>
+                  <p className="text-sm leading-6 text-muted-foreground">
+                    {project.description}
+                  </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="px-3 py-1 text-xs font-medium">
+                    <Badge
+                      key={tech}
+                      variant="secondary"
+                      className="px-3 py-1 text-xs font-medium"
+                    >
                       {tech}
                     </Badge>
                   ))}
@@ -137,7 +157,7 @@ export default function Page() {
                   href={project.demo}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-primary/5 px-3 py-2 text-primary hover:bg-primary/10 transition"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary/5 px-3 py-2 text-primary transition hover:bg-primary/10"
                 >
                   <ExternalLink className="h-4 w-4" />
                   Live Demo
@@ -146,7 +166,7 @@ export default function Page() {
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-muted/50 px-3 py-2 hover:bg-muted transition"
+                  className="inline-flex items-center gap-2 rounded-full bg-muted/50 px-3 py-2 transition hover:bg-muted"
                 >
                   <IconBrandGithub className="h-4 w-4" />
                   GitHub

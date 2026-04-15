@@ -1,5 +1,5 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Code,
   Server,
@@ -7,8 +7,8 @@ import {
   Monitor,
   Layers,
   Zap,
-  Globe
-} from "lucide-react";
+  Globe,
+} from "lucide-react"
 
 const skillCategories = [
   {
@@ -16,72 +16,85 @@ const skillCategories = [
     icon: Monitor,
     color: "text-blue-600 dark:text-blue-400",
     bgColor: "bg-blue-50 dark:bg-blue-950/20",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "MUI", "Bootstrap"]
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+      "MUI",
+      "Bootstrap",
+      "Shadcn UI",
+    ],
   },
   {
     title: "Backend Development",
     icon: Server,
     color: "text-green-600 dark:text-green-400",
     bgColor: "bg-green-50 dark:bg-green-950/20",
-    skills: ["Node.js", "PHP"]
+    skills: ["Node.js", "PHP"],
   },
   {
     title: "Full-Stack Frameworks",
     icon: Layers,
     color: "text-purple-600 dark:text-purple-400",
     bgColor: "bg-purple-50 dark:bg-purple-950/20",
-    skills: ["Next.js", "YII2"]
+    skills: ["Next.js", "YII2"],
   },
   {
     title: "Databases",
     icon: Database,
     color: "text-orange-600 dark:text-orange-400",
     bgColor: "bg-orange-50 dark:bg-orange-950/20",
-    skills: ["MySQL", "PostgreSQL"]
+    skills: ["MySQL", "PostgreSQL"],
   },
   {
     title: "Tools & Technologies",
     icon: Zap,
     color: "text-yellow-600 dark:text-yellow-400",
     bgColor: "bg-yellow-50 dark:bg-yellow-950/20",
-    skills: ["Git", "Linux"]
+    skills: ["Git", "Linux"],
   },
   {
     title: "Languages",
     icon: Code,
     color: "text-red-600 dark:text-red-400",
     bgColor: "bg-red-50 dark:bg-red-950/20",
-    skills: ["JavaScript", "TypeScript", "PHP", "Java"]
-  }
-];
+    skills: ["JavaScript", "TypeScript", "PHP", "Java"],
+  },
+]
 
 export default function Page() {
   return (
-    <div className="min-h-full py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-full px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <div className="mb-12 text-center">
+          <h1 className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
             Skills & Technologies
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise and the tools I use to build amazing applications.
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            A comprehensive overview of my technical expertise and the tools I
+            use to build amazing applications.
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, index) => {
-            const IconComponent = category.icon;
+            const IconComponent = category.icon
             return (
               <Card
                 key={category.title}
-                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md animate-in fade-in slide-in-from-bottom-4"
+                className="group animate-in border-0 shadow-md transition-all duration-300 fade-in slide-in-from-bottom-4 hover:-translate-y-1 hover:shadow-lg"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardHeader className={`rounded-t-lg ${category.bgColor} pb-4`}>
                   <CardTitle className="flex items-center gap-3 text-lg">
-                    <div className={`p-2 rounded-lg bg-white dark:bg-gray-800 shadow-sm ${category.color}`}>
+                    <div
+                      className={`rounded-lg bg-white p-2 shadow-sm dark:bg-gray-800 ${category.color}`}
+                    >
                       <IconComponent className="h-5 w-5" />
                     </div>
                     <span className="font-semibold">{category.title}</span>
@@ -93,7 +106,7 @@ export default function Page() {
                       <Badge
                         key={skill}
                         variant="secondary"
-                        className="px-3 py-1 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                        className="cursor-default px-3 py-1 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
                       >
                         {skill}
                       </Badge>
@@ -101,13 +114,13 @@ export default function Page() {
                   </div>
                 </CardContent>
               </Card>
-            );
+            )
           })}
         </div>
 
         {/* Additional Info */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-full border">
+          <div className="inline-flex items-center gap-2 rounded-full border bg-gradient-to-r from-blue-50 to-purple-50 px-6 py-3 dark:from-blue-950/20 dark:to-purple-950/20">
             <Globe className="h-5 w-5 text-blue-600 dark:text-blue-400" />
             <span className="text-sm font-medium text-muted-foreground">
               Always learning and exploring new technologies
@@ -116,5 +129,5 @@ export default function Page() {
         </div>
       </div>
     </div>
-  );
+  )
 }
