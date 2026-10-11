@@ -1,22 +1,17 @@
 "use client"
 
 import * as React from "react"
-import { Moon, Sun, Menu, X } from "lucide-react"
-import { useTheme } from "next-themes"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
-import { Switch } from "@/components/ui/switch"
-import Image from "next/image"
 import Link from "next/link"
 
 export default function Navbar() {
-  const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
@@ -30,14 +25,14 @@ export default function Navbar() {
         id="top-navbar"
         className="sticky top-0 flex h-fit w-full border-b bg-background p-3"
       >
-        <div className="pt-2 pr-2">
+        {/* <div className="pt-2 pr-2">
           <Image
             src="/MugPee-logo-transparent_horizon.png"
             width={100}
             height={20}
             alt="MugPee"
           />
-        </div>
+        </div> */}
       </div>
     )
   }
@@ -47,9 +42,9 @@ export default function Navbar() {
       id="top-navbar"
       className="sticky top-0 z-50 w-full border-b bg-background"
     >
-      <div className="flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="relative flex h-16 items-center justify-end px-4 md:px-6">
         {/* Logo */}
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <Image
             src="/MugPee-logo-transparent_horizon.png"
             width={100}
@@ -57,10 +52,10 @@ export default function Navbar() {
             alt="MugPee"
             className="h-5 w-auto"
           />
-        </div>
+        </div> */}
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center space-x-6 md:flex">
+        <div className="hidden md:absolute md:left-1/2 md:flex md:-translate-x-1/2 md:items-center">
           <NavigationMenu>
             <NavigationMenuList className="flex space-x-2">
               <NavigationMenuItem>
@@ -103,7 +98,7 @@ export default function Navbar() {
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link
                     href="/resume"
@@ -112,7 +107,7 @@ export default function Navbar() {
                     Resume
                   </Link>
                 </NavigationMenuLink>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link
@@ -128,18 +123,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Actions */}
-        <div className="hidden items-center space-x-4 md:flex">
-          <div className="flex items-center space-x-2">
-            <Sun className="h-4 w-4" />
-            <Switch
-              id="dark-light-mode"
-              checked={resolvedTheme === "dark"}
-              onCheckedChange={() =>
-                setTheme(resolvedTheme === "dark" ? "light" : "dark")
-              }
-            />
-            <Moon className="h-4 w-4" />
-          </div>
+        <div className="hidden md:flex">
           <Button size="sm">Download Resume</Button>
         </div>
 
@@ -191,13 +175,13 @@ export default function Navbar() {
               >
                 Skills
               </Link>
-              <Link
+              {/* <Link
                 href="/resume"
                 className="px-3 py-2 text-sm font-medium transition-colors hover:text-primary"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Resume
-              </Link>
+              </Link> */}
               <Link
                 href="/contact"
                 className="px-3 py-2 text-sm font-medium transition-colors hover:text-primary"
@@ -208,18 +192,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Actions */}
-            <div className="flex items-center justify-between border-t pt-4">
-              <div className="flex items-center space-x-2">
-                <Sun className="h-4 w-4" />
-                <Switch
-                  id="dark-light-mode-mobile"
-                  checked={resolvedTheme === "dark"}
-                  onCheckedChange={() =>
-                    setTheme(resolvedTheme === "dark" ? "light" : "dark")
-                  }
-                />
-                <Moon className="h-4 w-4" />
-              </div>
+            <div className="border-t pt-4">
               <Button size="sm">Download Resume</Button>
             </div>
           </div>
