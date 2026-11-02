@@ -8,7 +8,7 @@ const projects = [
     title: "Vet Map Hong Kong",
     description:
       "An interactive map to discover veterinary clinics across Hong Kong, with clinic search and filters for 24-hour care and exotic-animal services.",
-    image: "/vet-map.png",
+    image: "/vet-map.PNG",
     tech: ["Expo", "Leaflet", "OpenStreetMap"],
     category: "Web",
     demo: "https://vet-map-lilac.vercel.app/",
