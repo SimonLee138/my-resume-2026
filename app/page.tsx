@@ -31,7 +31,7 @@ export default function Page() {
   }
 
   return (
-    <div className="relative flex min-h-full items-center justify-center p-4 sm:p-6">
+    <div className="relative flex flex-1 items-center justify-center p-4 sm:p-6">
       <AnimatedBackground />
       <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
         <div className="space-y-6">
