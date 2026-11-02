@@ -1,69 +1,19 @@
-"use client"
-
-import * as React from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { ExternalLink } from "lucide-react"
 import { IconBrandGithub } from "@tabler/icons-react"
 
-const projectCategories = ["All", "Web", "AI-powered", "Full-Stack"]
-
 const projects = [
-  /*{
-    title: "Resume AI Assistant",
-    description:
-      "An AI-powered resume builder with interview-ready summaries, skill suggestions, and one-click export.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    tech: ["Next.js", "TypeScript", "OpenAI", "Tailwind CSS"],
-    category: "AI-powered",
-    demo: "#",
-    github: "#"
-  },
   {
-    title: "Portfolio Studio",
+    title: "Vet Map Hong Kong",
     description:
-      "A modern portfolio platform with custom sections, case studies, and responsive presentation.",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+      "An interactive map to discover veterinary clinics across Hong Kong, with clinic search and filters for 24-hour care and exotic-animal services.",
+    image: "/vet-map.png",
+    tech: ["Expo", "Leaflet", "OpenStreetMap"],
     category: "Web",
-    demo: "#",
-    github: "#"
+    demo: "https://vet-map-lilac.vercel.app/",
+    github: "https://github.com/SimonLee138/vet-map",
   },
-  {
-    title: "AI Chat Dashboard",
-    description:
-      "A conversational dashboard for AI agents with chat history, templates, and analytics.",
-    image:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=1200&q=80",
-    tech: ["Next.js", "AI", "Supabase", "Tailwind CSS"],
-    category: "AI-powered",
-    demo: "#",
-    github: "#"
-  },
-  {
-    title: "Job Board Full-Stack",
-    description:
-      "A full-stack job listing platform with authentication, filters, and company profiles.",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-    tech: ["Next.js", "Prisma", "PostgreSQL", "Tailwind CSS"],
-    category: "Full-Stack",
-    demo: "#",
-    github: "#"
-  },
-  {
-    title: "Marketing Launch Page",
-    description:
-      "A polished launch page with animated hero, testimonials, and lead capture form.",
-    image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-    tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
-    category: "Web",
-    demo: "#",
-    github: "#"
-  }*/
   {
     title: "Medication Scheduler",
     description:
@@ -77,16 +27,6 @@ const projects = [
 ]
 
 export default function Page() {
-  const [category, setCategory] = React.useState("All")
-
-  const filteredProjects = React.useMemo(
-    () =>
-      category === "All"
-        ? projects
-        : projects.filter((project) => project.category === category),
-    [category]
-  )
-
   return (
     <div className="min-h-full px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -103,25 +43,8 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="mb-8 flex flex-wrap justify-center gap-2">
-          {projectCategories.map((option) => (
-            <button
-              key={option}
-              type="button"
-              onClick={() => setCategory(option)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
-                category === option
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "bg-muted/70 text-muted-foreground hover:bg-muted"
-              }`}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project) => (
+          {projects.map((project) => (
             <Card
               key={project.title}
               className="overflow-hidden shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
@@ -162,15 +85,17 @@ export default function Page() {
                   <ExternalLink className="h-4 w-4" />
                   Live Demo
                 </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-muted/50 px-3 py-2 transition hover:bg-muted"
-                >
-                  <IconBrandGithub className="h-4 w-4" />
-                  GitHub
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-muted/50 px-3 py-2 transition hover:bg-muted"
+                  >
+                    <IconBrandGithub className="h-4 w-4" />
+                    GitHub
+                  </a>
+                )}
               </div>
             </Card>
           ))}

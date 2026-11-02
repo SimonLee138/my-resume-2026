@@ -124,7 +124,9 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex">
-          <Button size="sm">Download Resume</Button>
+          <Button asChild size="sm">
+            <a href="/api/download-resume">Download Resume</a>
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -193,7 +195,14 @@ export default function Navbar() {
 
             {/* Mobile Actions */}
             <div className="border-t pt-4">
-              <Button size="sm">Download Resume</Button>
+              <Button asChild size="sm">
+                <a
+                  href="/api/download-resume"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Download Resume
+                </a>
+              </Button>
             </div>
           </div>
         </div>

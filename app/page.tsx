@@ -66,30 +66,6 @@ export default function Page() {
               <Link href="/contact">Let's Connect</Link>
             </Button>
           </div>
-
-          {/* Additional Info */}
-          <div className="space-y-4 pt-8">
-            <p className="text-sm text-muted-foreground">
-              You may use the AI Resume Assistant to help you enhance your
-              resume and portfolio.
-            </p>
-            <Button
-              className="mt-2"
-              onClick={() => setShowChatbot(!showChatbot)}
-            >
-              AI Resume Assistant
-            </Button>
-            {showChatbot && <AIChatbot />}
-          </div>
-
-          {/* Dark mode hint */}
-          <div className="pt-4">
-            <p className="font-mono text-xs text-muted-foreground">
-              (Press{" "}
-              <kbd className="rounded bg-muted px-1 py-0.5 text-xs">d</kbd> to
-              toggle dark mode)
-            </p>
-          </div>
         </div>
       </div>
     </div>
