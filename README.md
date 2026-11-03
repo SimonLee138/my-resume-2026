@@ -5,7 +5,6 @@ A personal portfolio and online resume built with Next.js, React, TypeScript, an
 ## Features
 
 - Responsive portfolio pages for Home, About, Projects, Skills, and Contact.
-- Dark/light theme support.
 - Project cards with links to live demos and source repositories where available.
 - Resume download served as a PDF attachment.
 
