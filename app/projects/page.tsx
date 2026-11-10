@@ -6,8 +6,15 @@ import { IconBrandGithub } from "@tabler/icons-react"
 const projects = [
   {
     title: "Vet Map Hong Kong",
+    challenge:
+      "Pet owners in Hong Kong often struggle to find suitable veterinary clinics during emergencies or for exotic pets.",
     description:
-      "An interactive map to discover veterinary clinics across Hong Kong, with clinic search and filters for 24-hour care and exotic-animal services.",
+      "I built Vet Map Hong Kong, a React Native (Expo) application that displays veterinary clinics on an interactive map using OpenStreetMap and Leaflet. Users can search by location, filter for 24-hour clinics, and identify clinics that handle exotic animals.",
+    features: [
+      "Real-time map with clinic markers",
+      "Search and multi-filter system",
+      "Clean mobile-first UI",
+    ],
     image: "/vet-map.PNG",
     tech: ["Expo", "Leaflet", "OpenStreetMap"],
     category: "Web",
@@ -16,8 +23,16 @@ const projects = [
   },
   {
     title: "Medication Scheduler",
+    challenge:
+      "Managing multiple medications with different timings is error-prone and stressful.",
     description:
-      "An application to help users manage their medication schedules effectively.",
+      "I developed Medication Scheduler, a full-stack web app that allows users to create, view, and track their medication schedules. The system supports multiple medications, custom timings, and a clean daily/weekly view so users can quickly see what they need to take.",
+    features: [
+      "Create and edit medication schedules",
+      "Daily and overview views",
+      "Persistent data storage with PostgreSQL",
+      "Responsive UI built with Tailwind CSS",
+    ],
     image: "/medication-scheduler.png",
     tech: ["Next.js", "PostgreSQL", "TypeScript", "Tailwind CSS"],
     category: "Web",
@@ -60,19 +75,33 @@ export default function Page() {
                 <div className="space-y-2">
                   <h2 className="text-xl font-semibold">{project.title}</h2>
                   <p className="text-sm leading-6 text-muted-foreground">
+                    {project.challenge}
+                  </p>
+                  <p className="text-sm leading-6 text-muted-foreground">
                     {project.description}
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="secondary"
-                      className="px-3 py-1 text-xs font-medium"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
+                <div className="space-y-2">
+                  <h3 className="text-sm font-semibold">Key features</h3>
+                  <ul className="list-inside list-disc space-y-1 text-sm leading-6 text-muted-foreground">
+                    {project.features.map((feature) => (
+                      <li key={feature}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-sm font-semibold">Tech stack</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="secondary"
+                        className="px-3 py-1 text-xs font-medium"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </CardContent>
               <div className="flex flex-wrap items-center justify-between gap-3 border-t px-4 py-4 text-sm text-muted-foreground">
